@@ -6,7 +6,7 @@ public:
         sort(nums.begin(), nums.end());
         int small = nums[0];
         int big = nums[n-1];
-        if(small - big == (n - 1)){
+        if(big - small == (n - 1)){
             return ans;
         }
         else{

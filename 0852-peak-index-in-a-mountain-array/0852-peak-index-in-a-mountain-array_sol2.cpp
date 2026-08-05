@@ -2,7 +2,6 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int n = arr.size();
-        int c;
         int s = 0, e = n-1;
         if(arr[s] > arr[s+1]) return 0;
         if(arr[e] > arr[e-1]) return e;
@@ -10,8 +9,7 @@ public:
         s++;
         while(s <= e){
             int mid = s + (e-s)/2;
-            if((arr[mid] > arr[mid-1]) & (arr[mid] > arr[mid+1])){
-                c = mid;
+            if((arr[mid] > arr[mid-1]) && (arr[mid] > arr[mid+1])){
                 return mid;
             }
             if(arr[mid] < arr[mid+1]){
@@ -21,6 +19,6 @@ public:
                 e= mid-1;
             }
         }
-        return c;
+        return -1;
     }
 };

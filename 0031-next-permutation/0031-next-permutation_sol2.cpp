@@ -22,13 +22,6 @@ public:
                 break;
             }
         }
-        int s = piv + 1;
-        int e = n - 1;
-
-        while(s < e){
-            swap(nums[s], nums[e]);
-            s++;
-            e--;
-        }
+        reverse(nums.begin() + piv + 1, nums.end());
     }
 };
